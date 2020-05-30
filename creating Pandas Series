@@ -1,0 +1,13 @@
+import pandas as pd
+# From numpy ndarray
+a = ['a','b','c']
+l = [10,20,30]
+print(pd.Series(a,l))
+# From Dictionary
+d = {'v':1,'c':2,'a':3}
+l=['c','b','a']
+print(pd.Series(d,l))
+# From Scalar
+n=11
+l=['x','y','z']
+print(pd.Series(n,l))
