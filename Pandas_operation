@@ -1,0 +1,16 @@
+import pandas as pd
+f = pd.read_csv("pokeman.csv")
+print(f['HP']) #to select HP column
+print(f[['HP','Name']]) #select multiple columns..remember [[]] double brackets
+f['difference'] = f['Attack'] - f['HP']
+print(f)
+f.drop(['difference'],inplace = True, axis = 1)
+print("After deleting ",f)
+print(f.iloc[5]) #row wise selection by integer / row number
+print(f.loc[5]) # row wise selection by label
+print(f[:6])   # slicing
+f = f.append(pd.DataFrame([[800,0,0,0,0,0,0,0,0,0,0,0]], columns = f.columns),ignore_index=True)
+print(f)
+f.drop(index = 800,axis =0, inplace = True)
+print(f)
+800 in f.index   # check whether 800 row is deleted or not
