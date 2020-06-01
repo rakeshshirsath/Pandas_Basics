@@ -1,0 +1,16 @@
+# Code starts here
+import pandas as pd
+# Rename columns 'HP', 'Sp. Atk' and 'Sp. Def' as 'Health Points', 'Attack speed points' and 'Defense speed points'
+df = pd.read_csv("pokemon.csv")
+df.rename(columns = {'HP':'Health Points','Sp. Atk': 'Attack speed points','Sp. Def':'Defense speed points'}, inplace = True)
+print(df)
+# Remove the '#' column permanently
+df.drop(['#'], inplace = True, axis = 1)
+
+# Set index as names
+df.set_index('Name',inplace=True)
+
+# Look at the first 5 observations
+df.head()
+
+# Code ends here
