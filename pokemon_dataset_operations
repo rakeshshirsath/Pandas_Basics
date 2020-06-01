@@ -1,0 +1,19 @@
+# Code starts here
+import pandas as pd
+fp = pd.read_csv(pokemon)
+# head of the dataframe
+head = fp.head(10)
+print("header is ",head)
+# describe the dataframe
+describe = fp.describe()
+print("describe is ",describe)
+# shape of the dataframe
+shape = fp.shape
+print("shape is ",shape)
+# check for null values
+null = fp.isnull().sum()
+print("null is",null)
+# check for unique values
+unique = fp.nunique()
+print("unique is",unique)
+# code ends here
